@@ -1,7 +1,6 @@
 playGame();
 
 function playGame() {
-  
   let computerScore = 0;
   let humanScore = 0;
 
@@ -34,11 +33,11 @@ function playGame() {
     }
 
     function getHumanChoice() {
-      let choice = prompt(
-        "What would you choose? Rock, Paper, Scissors?: "
-      ).toLowerCase();
-      console.log("Human's choice: ", choice);
-      return choice;
+        let choice = prompt(
+            "What would you choose? Rock, Paper, Scissors?: "
+          ).toLowerCase();
+          console.log("Human's choice: ", choice);
+          return choice;
     }
 
     function playRound(computerChoice, humanChoice) {
