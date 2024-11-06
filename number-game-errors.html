@@ -45,7 +45,7 @@
 
     <script>
       let randomNumber = Math.floor(Math.random() * 100) + 1;
-      
+      console.log("Game loaded and random number generated: ", randomNumber);
       const guesses = document.querySelector(".guesses");
       const lastResult = document.querySelector(".lastResult");
       const lowOrHi = document.querySelector(".lowOrHi");
@@ -57,6 +57,7 @@
 
       function checkGuess() {
         const userGuess = Number(guessField.value);
+        console.log("User's guess :", userGuess);
         if (guessCount === 1) {
           guesses.textContent = "Previous guesses: ";
         }
@@ -87,6 +88,7 @@
       guessSubmit.addEventListener("click", checkGuess);
 
       function setGameOver() {
+        console.warn("Game is over. Reset is required.")
         guessField.disabled = true;
         guessSubmit.disabled = true;
         resetButton = document.createElement("button");
@@ -96,6 +98,8 @@
       }
 
       function resetGame() {
+        console.clear();
+        console.info("Game is reset. Ready now.");
         guessCount = 1;
 
         const resetParas = document.querySelectorAll(".resultParas p");
@@ -112,6 +116,7 @@
         lastResult.style.backgroundColor = "white";
 
         randomNumber = Math.floor(Math.random() * 100) + 1;
+        console.log("New random number generated: ", randomNumber);
 
       }
     </script>
