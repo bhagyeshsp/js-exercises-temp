@@ -1,0 +1,59 @@
+:root {
+  --fsize: 20px;
+  --color: white;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  color: var(--color);
+  font-size: 0.8rem;
+}
+html {
+  font-family: 'Montserrat', sans-serif;
+  font-size: var(--fsize);
+  font-weight: 300;
+  line-height: 1.6;
+  color-scheme: dark light;
+}
+body {
+  min-height: 100vh;
+}
+header,
+main {
+  padding: 1rem 4rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+code {
+  width: 800px;
+}
+p {
+  font-size: 1rem;
+  margin-block: 1rem;
+}
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --color: rebeccapurple;
+  }
+}
+@media screen and (min-width: 600px) {
+  :root {
+    --fsize: 24px;
+    --color: orangered;
+  }
+}
+@media screen and (min-width: 900px) {
+  :root {
+    --fsize: 30px;
+    --color: cornflowerblue;
+  }
+}
+@media screen and (prefers-color-scheme: light) and (min-width: 900px) {
+  :root {
+    --color: steelblue;
+  }
+}
