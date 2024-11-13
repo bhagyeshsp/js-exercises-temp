@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Loops Ready Reckoner</title>
+    <style>
+        body {
+            font-family: system-ui;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .exercise {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .solution {
+            display: none;
+            background: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #0d6efd;
+            margin-top: 10px;
+        }
+        button {
+            background: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        button:hover {
+            background: #0b5ed7;
+        }
+        .section {
+            margin: 40px 0;
+        }
+        code {
+            background: #f8f9fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        #progress {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div id="progress">
+        Completed: <span id="completed">0</span>/50
+    </div>
+
+    <h1>JavaScript Loops Ready Reckoner</h1>
+    
+    <div class="section">
+        <h2>Part 1: Basic For Loops (Exercises 1-15)</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 1: Simple Counting</h3>
+            <p>Write a for loop that counts from 1 to 5 and logs each number.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 1; i <= 5; i++) {
+                    console.log(i);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 2: Counting Backwards</h3>
+            <p>Write a for loop that counts down from 10 to 1.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 10; i >= 1; i--) {
+                    console.log(i);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 3: Even Numbers</h3>
+            <p>Write a for loop that prints even numbers from 2 to 10.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 2; i <= 10; i += 2) {
+                    console.log(i);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 4: Array Iteration</h3>
+            <p>Given array <code>const fruits = ['apple', 'banana', 'orange']</code>, write a for loop to log each fruit.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const fruits = ['apple', 'banana', 'orange'];
+                for (let i = 0; i < fruits.length; i++) {
+                    console.log(fruits[i]);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 5: Sum of Numbers</h3>
+            <p>Write a for loop to calculate the sum of numbers from 1 to 10.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let sum = 0;
+                for (let i = 1; i <= 10; i++) {
+                    sum += i;
+                }
+                console.log(sum);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 6: Multiplication Table</h3>
+            <p>Write a for loop to print the multiplication table for number 5 (5 x 1 to 5 x 10).</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 1; i <= 10; i++) {
+                    console.log(`5 x ${i} = ${5 * i}`);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 7: String Characters</h3>
+            <p>Write a for loop to print each character in the string "Hello" on a new line.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const str = "Hello";
+                for (let i = 0; i < str.length; i++) {
+                    console.log(str[i]);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 8: Array Modification</h3>
+            <p>Write a for loop to double each number in the array [1, 2, 3, 4, 5].</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const numbers = [1, 2, 3, 4, 5];
+                for (let i = 0; i < numbers.length; i++) {
+                    numbers[i] = numbers[i] * 2;
+                }
+                console.log(numbers);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 9: Skip Numbers</h3>
+            <p>Write a for loop that prints numbers from 1 to 10, skipping 3, 6, and 9.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 1; i <= 10; i++) {
+                    if (i % 3 === 0) continue;
+                    console.log(i);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 10: Nested Loop - Square Pattern</h3>
+            <p>Write nested for loops to create a 3x3 square pattern of asterisks.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 0; i < 3; i++) {
+                    let row = '';
+                    for (let j = 0; j < 3; j++) {
+                        row += '* ';
+                    }
+                    console.log(row);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 11: Array of Objects</h3>
+            <p>Given an array of objects representing books with title and author, write a for loop to print each book's details.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const books = [
+                    { title: "Book 1", author: "Author 1" },
+                    { title: "Book 2", author: "Author 2" },
+                    { title: "Book 3", author: "Author 3" }
+                ];
+                
+                for (let i = 0; i < books.length; i++) {
+                    console.log(`${books[i].title} by ${books[i].author}`);
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 12: Reverse String</h3>
+            <p>Write a for loop to reverse the string "JavaScript".</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const str = "JavaScript";
+                let reversed = '';
+                for (let i = str.length - 1; i >= 0; i--) {
+                    reversed += str[i];
+                }
+                console.log(reversed);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 13: Find Index</h3>
+            <p>Write a for loop to find the index of number 7 in the array [4, 2, 7, 1, 9, 5].</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const arr = [4, 2, 7, 1, 9, 5];
+                let index = -1;
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] === 7) {
+                        index = i;
+                        break;
+                    }
+                }
+                console.log(index);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 14: Factorial</h3>
+            <p>Write a for loop to calculate the factorial of 5.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let factorial = 1;
+                for (let i = 5; i >= 1; i--) {
+                    factorial *= i;
+                }
+                console.log(factorial);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 15: Triangle Pattern</h3>
+            <p>Write nested for loops to create a triangle pattern of numbers (1 to 5 rows).</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                for (let i = 1; i <= 5; i++) {
+                    let row = '';
+                    for (let j = 1; j <= i; j++) {
+                        row += j + ' ';
+                    }
+                    console.log(row);
+                }
+                </code>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Part 2: While Loops (Exercises 16-30)</h2>
+        
+        <div class="exercise">
+            <h3>Exercise 16: Basic While</h3>
+            <p>Write a while loop that prints numbers from 1 to 5.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let i = 1;
+                while (i <= 5) {
+                    console.log(i);
+                    i++;
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 17: Sum Until Target</h3>
+            <p>Write a while loop that adds numbers starting from 1 until the sum exceeds 100.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let sum = 0;
+                let num = 1;
+                while (sum <= 100) {
+                    sum += num;
+                    num++;
+                }
+                console.log(`Final sum: ${sum}, Last number added: ${num-1}`);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 18: Countdown</h3>
+            <p>Write a while loop for a countdown from 10 to "Blast off!"</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let countdown = 10;
+                while (countdown >= 0) {
+                    if (countdown === 0) {
+                        console.log("Blast off!");
+                    } else {
+                        console.log(countdown);
+                    }
+                    countdown--;
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 19: Number Guessing</h3>
+            <p>Write a while loop for a number guessing game (target number is 7).</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const target = 7;
+                let guess = parseInt(prompt("Guess the number (1-10):"));
+                while (guess !== target) {
+                    if (guess < target) {
+                        guess = parseInt(prompt("Too low! Try again:"));
+                    } else {
+                        guess = parseInt(prompt("Too high! Try again:"));
+                    }
+                }
+                console.log("Correct!");
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 20: Power of Two</h3>
+            <p>Write a while loop to find the smallest power of 2 greater than 1000.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let power = 1;
+                while (power <= 1000) {
+                    power *= 2;
+                }
+                console.log(power);
+                </code>
+            </div>
+        </div>
+
+        <!-- Previous content remains the same, adding from Exercise 21 onwards -->
+
+        <div class="exercise">
+            <h3>Exercise 21: Array Search</h3>
+            <p>Write a while loop to search for the first negative number in an array [3, 7, 1, -4, 9, -2].</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const numbers = [3, 7, 1, -4, 9, -2];
+                let index = 0;
+                while (index < numbers.length && numbers[index] >= 0) {
+                    index++;
+                }
+                console.log(`First negative number found at index ${index}`);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 22: String Validation</h3>
+            <p>Write a while loop to ensure a password is at least 8 characters long.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let password = prompt("Enter a password (min 8 characters):");
+                while (password.length < 8) {
+                    password = prompt("Too short! Try again (min 8 characters):");
+                }
+                console.log("Password accepted!");
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 23: Fibonacci Sequence</h3>
+            <p>Write a while loop to generate Fibonacci numbers less than 100.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let a = 0, b = 1;
+                while (a < 100) {
+                    console.log(a);
+                    const temp = a + b;
+                    a = b;
+                    b = temp;
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 24: Digit Sum</h3>
+            <p>Write a while loop to calculate the sum of digits in a number (e.g., 12345).</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let num = 12345;
+                let sum = 0;
+                while (num > 0) {
+                    sum += num % 10;
+                    num = Math.floor(num / 10);
+                }
+                console.log(sum);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 25: Binary to Decimal</h3>
+            <p>Write a while loop to convert a binary number (10110) to decimal.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let binary = 10110;
+                let decimal = 0;
+                let power = 0;
+                while (binary > 0) {
+                    decimal += (binary % 10) * Math.pow(2, power);
+                    binary = Math.floor(binary / 10);
+                    power++;
+                }
+                console.log(decimal);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 26: Array Cleanup</h3>
+            <p>Write a while loop to remove all falsy values (0, null, undefined, '', false) from an array.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const arr = [1, 0, 'hello', '', null, undefined, false, 42];
+                let i = 0;
+                while (i < arr.length) {
+                    if (!arr[i]) {
+                        arr.splice(i, 1);
+                    } else {
+                        i++;
+                    }
+                }
+                console.log(arr);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 27: Decimal to Binary</h3>
+            <p>Write a while loop to convert a decimal number (22) to binary.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let decimal = 22;
+                let binary = '';
+                while (decimal > 0) {
+                    binary = (decimal % 2) + binary;
+                    decimal = Math.floor(decimal / 2);
+                }
+                console.log(binary);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 28: Prime Factorization</h3>
+            <p>Write a while loop to find all prime factors of a number (e.g., 84).</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                let num = 84;
+                let factor = 2;
+                while (num > 1) {
+                    if (num % factor === 0) {
+                        console.log(factor);
+                        num = num / factor;
+                    } else {
+                        factor++;
+                    }
+                }
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 29: String Compression</h3>
+            <p>Write a while loop to compress a string "AABBBCCCC" to "A2B3C4".</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const str = "AABBBCCCC";
+                let compressed = '';
+                let i = 0;
+                while (i < str.length) {
+                    let count = 1;
+                    while (i + 1 < str.length && str[i] === str[i + 1]) {
+                        count++;
+                        i++;
+                    }
+                    compressed += str[i] + count;
+                    i++;
+                }
+                console.log(compressed);
+                </code>
+            </div>
+        </div>
+
+        <div class="exercise">
+            <h3>Exercise 30: Array Rotation</h3>
+            <p>Write a while loop to rotate an array [1,2,3,4,5] by 2 positions to the right.</p>
+            <button onclick="toggleSolution(this)">Show Solution</button>
+            <div class="solution">
+                <code>
+                const arr = [1, 2, 3, 4, 5];
+                let rotations = 2;
+                while (rotations > 0) {
+                    arr.unshift(arr.pop());
+                    rotations--;
+                }
+                console.log(arr);
+                </code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Part 3: Do...While Loops (Exercises 31-40)</h2>
+            
+            <div class="exercise">
+                <h3>Exercise 31: Basic Input Validation</h3>
+                <p>Write a do...while loop to keep asking for a number between 1 and 10 until a valid input is received.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let num;
+                    do {
+                        num = parseInt(prompt("Enter a number between 1 and 10:"));
+                    } while (num < 1 || num > 10);
+                    console.log("Valid input received:", num);
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 32: Menu System</h3>
+                <p>Create a menu system with options 1-4, where 4 is exit. Keep showing the menu until exit is chosen.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let choice;
+                    do {
+                        choice = prompt(`
+                            1. View Profile
+                            2. Edit Settings
+                            3. Show Help
+                            4. Exit
+                            Choose an option:`);
+                        
+                        switch(choice) {
+                            case "1": console.log("Viewing profile..."); break;
+                            case "2": console.log("Editing settings..."); break;
+                            case "3": console.log("Showing help..."); break;
+                            case "4": console.log("Goodbye!"); break;
+                            default: console.log("Invalid option");
+                        }
+                    } while (choice !== "4");
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 33: Number Game</h3>
+                <p>Write a do...while loop for a game where player must guess sum of two dice rolls (2-12).</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    const dice1 = Math.floor(Math.random() * 6) + 1;
+                    const dice2 = Math.floor(Math.random() * 6) + 1;
+                    const sum = dice1 + dice2;
+                    let guess;
+                    do {
+                        guess = parseInt(prompt("Guess sum of dice (2-12):"));
+                        if (guess < sum) console.log("Too low!");
+                        if (guess > sum) console.log("Too high!");
+                    } while (guess !== sum);
+                    console.log("Correct! The dice showed", dice1, "and", dice2);
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 34: Password Generator</h3>
+                <p>Write a do...while loop to generate random passwords until one meets the criteria (8+ chars, includes number and uppercase).</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let password;
+                    do {
+                        password = Math.random().toString(36).slice(-10);
+                        password += Math.floor(Math.random() * 10);
+                        password += String.fromCharCode(65 + Math.floor(Math.random() * 26));
+                    } while (password.length < 8 || 
+                            !/\d/.test(password) || 
+                            !/[A-Z]/.test(password));
+                    console.log("Generated valid password:", password);
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 35: Calculator</h3>
+                <p>Write a do...while loop for a calculator that performs operations until user chooses to exit.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let continue;
+                    do {
+                        const num1 = parseFloat(prompt("Enter first number:"));
+                        const op = prompt("Enter operator (+,-,*,/):");
+                        const num2 = parseFloat(prompt("Enter second number:"));
+                        
+                        let result;
+                        switch(op) {
+                            case '+': result = num1 + num2; break;
+                            case '-': result = num1 - num2; break;
+                            case '*': result = num1 * num2; break;
+                            case '/': result = num1 / num2; break;
+                        }
+                        console.log(`${num1} ${op} ${num2} = ${result}`);
+                        
+                        continue = prompt("Continue? (yes/no)").toLowerCase();
+                    } while (continue === 'yes');
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 36: Word Scramble Game</h3>
+                <p>Write a do...while loop for a word scramble game that continues until player guesses correctly.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    const word = "javascript";
+                    const scrambled = word.split('')
+                        .sort(() => Math.random() - 0.5)
+                        .join('');
+                    let guess;
+                    console.log("Unscramble:", scrambled);
+                    do {
+                        guess = prompt("Your guess:").toLowerCase();
+                        if (guess !== word) console.log("Try again!");
+                    } while (guess !== word);
+                    console.log("Correct!");
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 37: Dice Rolling Statistics</h3>
+                <p>Write a do...while loop to roll a die until a 6 is rolled, counting total rolls.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let roll;
+                    let count = 0;
+                    do {
+                        roll = Math.floor(Math.random() * 6) + 1;
+                        count++;
+                        console.log(`Roll ${count}: ${roll}`);
+                    } while (roll !== 6);
+                    console.log(`It took ${count} rolls to get a 6`);
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 38: Array Manipulation</h3>
+                <p>Write a do...while loop that removes elements from an array until it's empty.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    const arr = [1, 2, 3, 4, 5];
+                    do {
+                        console.log("Removed:", arr.pop());
+                        console.log("Remaining:", arr);
+                    } while (arr.length > 0);
+                    </code>
+                </div>
+            </div>
+
+            <div class="exercise">
+                <h3>Exercise 39: Temperature Converter</h3>
+                <p>Write a do...while loop for a temperature converter that continues until user chooses to stop.</p>
+                <button onclick="toggleSolution(this)">Show Solution</button>
+                <div class="solution">
+                    <code>
+                    let continue;
+                    do {
+                        const celsius = parseFloat(prompt("Enter temperature in Celsius:"));
+                        const fahrenheit = (celsius * 9/5) + 32;
+                        console.log(`${celsius}°C = ${fahrenheit}°F`);
+                        continue = prompt("Convert another? (yes/no)").toLowerCase();
+                    } while (continue === 'yes');
+                    </code>
+                </div>
+            </div>
+
+            
+    </div>
+
+    <script>
+        function toggleSolution(button) {
+            const solution = button.nextElementSibling;
+            const isHidden = solution.style.display === 'none' || solution.style.display === '';
+            solution.style.display = isHidden ? 'block' : 'none';
+            button.textContent = isHidden ? 'Hide Solution' : 'Show Solution';
+            
+            if (isHidden) {
+                const completed = parseInt(document.getElementById('completed').textContent);
+                document.getElementById('completed').textContent = completed + 1;
+            } else {
+                const completed = parseInt(document.getElementById('completed').textContent);
+                document.getElementById('completed').textContent = completed - 1;
+            }
+        }
+    </script>
+</body>
+</html>
